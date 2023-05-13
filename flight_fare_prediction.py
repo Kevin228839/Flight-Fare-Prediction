@@ -57,7 +57,7 @@ train_preprocessed = pd.concat([df_train, df_train_categorical], axis=1)
 train_target = df_train['Price']
 
 # Drop 'Price' because price is the target variable
-df_train.drop(['Price'], axis=1, inplace=True)
+train_preprocessed.drop(['Price'], axis=1, inplace=True)
 
 
 
