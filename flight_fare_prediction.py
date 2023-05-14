@@ -44,6 +44,9 @@ df['Duration'] = df['Duration']\
     .str.replace('m', '*1')\
     .apply(eval)
 
+# drop Additional_Info 
+df.drop(['Additional_Info'], axis=1, inplace=True)
+
 # Encode categorical attributes
 
 # Select categorical data
