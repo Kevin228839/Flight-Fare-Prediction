@@ -47,8 +47,10 @@ df['Duration'] = df['Duration']\
 # drop Additional_Info 
 df.drop(['Additional_Info'], axis=1, inplace=True)
 
-# Encode categorical attributes
+# drop Route
+df.drop(['Route'], axis=1, inplace=True) 
 
+# Encode categorical attributes
 # Select categorical data
 df_categorical = df[['Airline', 'Source', 'Destination']]
 df.drop(['Airline', 'Source', 'Destination'], axis=1, inplace=True)
