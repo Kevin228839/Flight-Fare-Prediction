@@ -4,6 +4,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
+import datetime
+
+def CheckWeekend(year, month, day):
+    convertDate = datetime.date(year, month, day)
+    convertDateResult = convertDate.weekday()
+    if convertDateResult <= 4:
+        return False
+    return True
 
 # Preprocessing
 # import dataset
@@ -71,5 +79,7 @@ preprocessed.drop(['Price'], axis=1, inplace=True)
 data_train, data_test, target_train, target_test = train_test_split(
     preprocessed, target,test_size=0.3, random_state=42)
 
+## Feature Engineering - check if date is weekday or weekend
+data_train["IsWeekend"] = data_train.apply(lambda x: 1 if CheckWeekend(x["Date_of_Journey_Year"], x["Date_of_Journey_Month"], x["Date_of_Journey_Day"]) else 0, axis=1)
 
 
