@@ -25,5 +25,5 @@ source .venv/bin/activate
 ### 3. Run the Project
 
 1. Open `flight_fare_prediction.ipynb` inside VS Code.
-2. Ensure the kernel in the top-right corner is set to **.venv (Python ...)**.
+2. Ensure the kernel in the top-right corner is set to **flight_fare_prediction (.venv/bin/python)**.
 3. Click **Run All** to execute the analysis.
